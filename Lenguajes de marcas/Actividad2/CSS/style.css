@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Breaking Bad";
+  src: url("./font/Breaking\ Bad.ttf") format('truetype');
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-size: 10px;
+  vertical-align: bottom;
+}
+
+span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#logo {
+  width: 200px;
+  height: 200px;
+}
+
+.backgroundImage {
+  background-image: url(/IMG/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#backgroundColor {
+  background-color: #0c3e11;
+}
+
+#menu {
+  width: 700px;
+  height: 300px;
+  border-width: 10px;
+  border-style: outset;
+  border-color: brown;
+  border-radius: 22px;
+}
+
+.title {
+  color: white;
+  font-family: Breaking Bad;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.table {
+  background-color: #2b2c24;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table2 {
+  img{
+    height: 40px;
+  }
+  tr {
+    background-color: #c2c62a;
+    text-align: center;
+  }
+}
+
+tr,
+td {
+  border: 3px solid #2b2c24;
+  border-style: solid;
+  width: 70px;
+  height: 70px;
+}
+
+.bcg1 {
+  background-color: #b8db1d;
+}
+
+.bcg2 {
+  background-color: #c5e24b;
+}
+
+.bcg3 {
+  background-color: #eff7c8;
+}
+
+.bcg4 {
+  background-color: #89a419;
+}
+
+.bcg5 {
+  background-color: #63702a;
+}
+
+.bcg6 {
+  background-color: #bcc49d;
+}
+
+.bcg7 {
+  background-color: #828e50;
+}
+
+.bcg8 {
+  background-color: #d3e582;
+}
+
+.bcp1 {
+  background-color: #ab8ecd;
+}
+
+form {
+  p{
+    position: relative;
+    left: 10%;
+    font-size: 14px;
+    margin: auto;
+  }
+  fieldset{
+    margin: 30%;
+    margin-top: 5%;
+    border-radius: 15px;
+  }
+  textarea {
+    resize: none;
+    width: 300px;
+    min-height: 200px;
+  }
+}
+
