@@ -1,15 +1,9 @@
-CREATE DATABASE IF NOT EXISTS ag2_proyectos;
+CREATE DATABASE IF NOT EXISTS Entrega2Sol;
 
-use ag2_proyectos;
-
-DROP TABLE asignacion;
-DROP TABLE empleados;
-DROP TABLE departamentos;
-DROP TABLE proyectos;
+use Entrega2Sol;
 
 /*DESACTIVAMOS LAS RESTRICCIONES DE INTEGRIDAD REFERENCIAL */
 SET foreign_key_checks = 0;
-
 
 CREATE TABLE IF NOT EXISTS empleados(
 	idempleado INT(11) NOT NULL,
@@ -102,10 +96,6 @@ SELECT * From departamentos;
 SELECT * FROM asignacion;
 */
 
-
-
-
-
 /*______________________CONSULTA 2______________________*/
 SELECT nombre, fecha_ini AS "Fecha de inicio del proyecto" FROM proyectos
 	WHERE MONTH(fecha_ini) > 3;
@@ -117,26 +107,23 @@ WHERE apellidos LIKE "%López%";
 /*______________________CONSULTA 4 y 5______________________*/
 
 SELECT nombre FROM proyectos
-WHERE idproyecto IN (SELECT idproyecto FROM asignacion
-			WHERE idempleado = 10480);
+WHERE idproyecto 
+	IN (SELECT idproyecto FROM asignacion WHERE idempleado = 10480);
             
 /*______________________CONSULTA 6______________________*/
 
 SELECT * FROM empleados
 	WHERE municipio IN (SELECT municipio FROM empleados WHERE municipio LIKE "Madrid") ||
     municipio IN (SELECT municipio FROM empleados WHERE municipio LIKE "Cordoba");
-
-
+    
 SELECT * FROM empleados 
 	WHERE municipio LIKE "Madrid" OR municipio LIKE "Cordoba";
-
 
 /*______________________CONSULTA 7______________________*/
 
 SELECT * FROM empleados
 	WHERE sueldo > 1300 and sueldo <  1550;
     
-
 /*______________________CONSULTA 8______________________*/
 /*No hay empleados que nazcan después de 1976, así que hemos puesto 1966*/
 SELECT * from empleados 
@@ -160,10 +147,10 @@ SELECT nombre, presupuestos FROM departamentos
 	SET idproyecto = (SELECT idproyecto FROM proyectos WHERE nombre LIKE "Runta")
     WHERE idempleado in (SELECT idempleado FROM empleados WHERE nombre LIKE "Alberto" AND apellidos LIKE "Pérez López");
 
-
- 
  /*______________________CONSULTA 11______________________*/
- /*Por motivos de logística “Antonio García Montero” ya no seguirá en el proyecto que tenía asignado y por lo tanto hay que quitarle esa asignación. */
+ /*Por motivos de logística “Antonio García Montero” ya no seguirá 
+ en el proyecto que tenía asignado y por lo tanto hay que quitarle esa asignación. 
+ */
  
  DELETE FROM asignacion
  WHERE idempleado LIKE (SELECT idempleado FROM empleados WHERE nombre LIKE "Antonio" AND apellidos LIKE "García Montero");
@@ -171,7 +158,8 @@ SELECT nombre, presupuestos FROM departamentos
  SELECT * FROM asignacion;
  
   /*______________________CONSULTA 12______________________*/
- /*Sacar todos los empleados del departamento de Diseño y que ganen más de 1500 Euros.*/
+ /*Sacar todos los empleados del departamento de Diseño y que ganen más de 1500 Euros.
+ */
  
 DELETE FROM empleados 
 WHERE sueldo > 1500 AND 
@@ -179,11 +167,9 @@ idpto IN (SELECT idpto FROM departamentos WHERE nombre LIKE "Diseño");
  
  SELECT * FROM empleados;
  
- 
    /*______________________CONSULTA 13______________________*/
  /*Incrementar en un 5% el sueldo de los empleados que pertenezcan al departamento de I+D y que ganen menos de 1400 Euros. */
 
- 
  UPDATE empleados
  SET sueldo =  sueldo + (sueldo/100*5)
  WHERE sueldo < 1400 AND
