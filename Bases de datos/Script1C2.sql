@@ -1,5 +1,5 @@
-create database if not exists pepe;
-use pepe;
+create database if not exists Prueba1;
+use Prueba1;
 
 /*
 En el archivo anterior veíamos los problemas de crear las claves dnetro del mismo

@@ -1,7 +1,7 @@
 -- DATA TYPES: https://dev.mysql.com/doc/refman/8.0/en/data-types.html
 
-create database if not exists pepe;
-use pepe;
+create database if not exists prueba1;
+use prueba1;
 
 -- DROP TABLE pepe.sucursales; Borraría la tabla
 -- También se puede hacer botón derecho y DROP TABLE sobre la tabla que quieras borrar..
@@ -15,9 +15,8 @@ DEFAULT "" quiere decir dos cosas -> que NUNCA será nulo, ya que va a tener un 
                                 
 DEFAULT NULL es para indicar que por defecto es nulo.
 
-NOT NULL UNIQUE sería una forma de encubrir una clave primaria, aunque lo suyo es hacerlo declariando PRIMARY KEY.
+NOT NULL UNIQUE sería una forma de encubrir una clave primaria, aunque lo suyo es hacerlo declarandolo como PRIMARY KEY.
 
-<<<<<<< HEAD
 DROP TABLE pepe.clientes; -> borraría la tabla
 
  NOT NULL UNIQUE sería una forma de encubrir una clave primaria, aunque lo suyo es hacerlo con primary
@@ -31,7 +30,6 @@ CREATE TABLE if not exists directores (
 );
 
 /*
-=======
 Lo que hay entre paréntesis que es la longitud máxima de ese campo. Es nuestra primera restricción.
 */
 

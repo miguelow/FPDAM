@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS actividad;
-USE actividad;
+CREATE DATABASE IF NOT EXISTS Entrega2;
+USE Entrega2;
 CREATE TABLE asignacion(
 Idempleado int(11),
 Idproyecto int(11)
@@ -162,13 +162,13 @@ DELETE FROM asignacion
 WHERE Idempleado = (SELECT IdEmpleado FROM empleados WHERE Nombre = 'Antonio' AND Apellidos = 'Garcia Montero');
 
 -- 12 Sacar todos los empleados del departamento de Diseño y que ganen más de 1500 Euros
-SELECT empleados.*
-FROM empleados
-JOIN departamentos ON empleados.IdDpto = departamentos.IdDpto
-WHERE departamentos.nombre = 'Diseño' AND empleados.Sueldo > 1500;
+DELETE FROM empleados 
+WHERE sueldo > 1500 AND 
+idDpto IN (SELECT idDpto FROM departamentos WHERE nombre LIKE "Diseño");
+SELECT * FROM empleados;
 
 -- 13 Incrementar en un 5% el sueldo de los empleados que pertenezcan al departamento de I+D y que ganen menos de 1400 Euros
-UPDATE empleados
-JOIN departamentos ON empleados.IdDpto = departamentos.IdDpto
-SET Sueldo = Sueldo * 1.05
-WHERE departamentos.nombre = 'I+D' AND Sueldo < 1400;
+ UPDATE empleados
+ SET sueldo =  sueldo + (sueldo/100*5)
+ WHERE sueldo < 1400 AND
+ idDpto IN (SELECT idDpto FROM departamentos WHERE nombre LIKE "I+D");
