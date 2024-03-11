@@ -7,10 +7,11 @@ import modelo.javabeans.Oficina;
 
 public class TestCuentasBanco {
 	
-	private static CuentasDelBanco cCuentas;
+	private static CuentasDelBanco cuentas;
 	
 	static {
-		cCuentas = new CuentasDelBanco();
+		//Constructor static
+		cuentas = new CuentasDelBanco();
 	}
 	
 	public static void main(String[] args) {
@@ -18,8 +19,6 @@ public class TestCuentasBanco {
 		 //todos();
 		 //porOficina();
 		// porBanco();
-		//alta();
-		//alta();
 		
 	}
 	
@@ -29,27 +28,27 @@ public class TestCuentasBanco {
 				new Cuenta(1004, "CORIENTE", 1005,  
 				new Oficina(9080, "Sucursal 32", "Madrid",  
 				new Banco(2090, "BBGFR", 120_000_000)));
-		System.out.println(cCuentas.alta(cuenta));
+		System.out.println(cuentas.alta(cuenta));
 		todos();
 	}
 	
 	public static void porOficina() {
 		System.out.println("POR OFICINA");
-		for (Cuenta cuenta: cCuentas.buscarPorOficina(9081)) {
+		for (Cuenta cuenta: cuentas.buscarPorOficina(9081)) {
 			System.out.println(cuenta);
 		}
 	}
 	
 	public static void porBanco() {
 		System.out.println("POR BANCO");
-		for (Cuenta cuenta: cCuentas.buscarPorBanco(2091)) {
+		for (Cuenta cuenta: cuentas.buscarPorBanco(2091)) {
 			System.out.println(cuenta);
 		}
 	}
 	
 	public static void todos() {
 		System.out.println("TODOS");
-		for (Cuenta cuenta: cCuentas.todas()) {
+		for (Cuenta cuenta: cuentas.todas()) {
 			System.out.println(cuenta);
 		}
 	}
