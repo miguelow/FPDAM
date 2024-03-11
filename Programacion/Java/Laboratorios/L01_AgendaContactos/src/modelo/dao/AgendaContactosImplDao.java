@@ -62,6 +62,10 @@ public class AgendaContactosImplDao implements gestionAgendaDao {
 	@Override
 	public boolean eliminarContacto(String nombre) {
 		Contacto contacto = buscarUno(nombre);
+		/*
+		Nos aseguramos que ese nombre no pertenezca a nuestra lista de contactos
+		Sabemos que el nombre es el identificador de esta clase  ya que se utiliza en el equals y el hashcode
+		*/
 		if (contacto != null)
 			return lista.remove(contacto);
 		else
