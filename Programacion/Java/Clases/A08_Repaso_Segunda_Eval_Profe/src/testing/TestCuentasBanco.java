@@ -15,9 +15,9 @@ public class TestCuentasBanco {
 	}
 	
 	public static void main(String[] args) {
-		 alta();
-		 //todos();
-		 //porOficina();
+		alta();
+		//todos();
+		//porOficina();
 		// porBanco();
 		
 	}

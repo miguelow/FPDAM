@@ -63,9 +63,10 @@ public class AgendaContactosImplDao implements gestionAgendaDao {
 	public boolean eliminarContacto(String nombre) {
 		Contacto contacto = buscarUno(nombre);
 		/*
-		Nos aseguramos que ese nombre no pertenezca a nuestra lista de contactos
-		Sabemos que el nombre es el identificador de esta clase  ya que se utiliza en el equals y el hashcode
-		*/
+		 * Nos aseguramos que ese nombre no pertenezca a nuestra lista de contactos
+		 * Sabemos que el nombre es el identificador de esta clase ya que se utiliza en
+		 * el equals y el hashcode
+		 */
 		if (contacto != null)
 			return lista.remove(contacto);
 		else
@@ -87,10 +88,10 @@ public class AgendaContactosImplDao implements gestionAgendaDao {
 		Contacto contacto = new Contacto();
 		contacto.setNombre(nombre);
 		int pos = lista.indexOf(contacto);
-		
-		if(pos != -1)
+
+		if (pos != -1)
 			return lista.get(pos);
-		
+
 		return null;
 	}
 
