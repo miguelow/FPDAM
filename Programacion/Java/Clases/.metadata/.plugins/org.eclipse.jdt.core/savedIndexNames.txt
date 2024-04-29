@@ -1,0 +1,10 @@
+INDEX VERSION 1.134+/Users/miguelortega/Documents/fp/FPDAM/Programacion/Java/Clases/.metadata/.plugins/org.eclipse.jdt.core
+4287891656.index
+848077071.index
+2712027047.index
+1222485938.index
+1749699714.index
+890223204.index
+605403629.index
+1865797976.index
+1291267710.index
